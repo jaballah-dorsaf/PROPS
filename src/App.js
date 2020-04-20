@@ -1,24 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Profile from "./profile/profile";
+import "./App.css";
 
 function App() {
+  let data = {
+    fullname: "jaballah dorsaf",
+    bio: "student",
+    profession: "dev fullsatcK"
+  };
+
+  const handleName = e => {
+     e.preventDefault();
+    alert(data.fullname);
+  };
+  const style = {
+    width: "600px",
+    height: "600px",
+    borderRadius: "10px",
+    border: "1px solid black",
+    marginTop: "10px"
+  };
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <br/>
+      <Profile data={data}>
+        <img
+          onClick={handleName}
+          style={style}
+          alt="img"
+          src="/profile.jpg"
+        />
+      </Profile>
+      <br/>
     </div>
   );
 }
